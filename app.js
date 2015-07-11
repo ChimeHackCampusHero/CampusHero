@@ -6,7 +6,11 @@ app.service('postService', function(){
 
 
   var addPost = function(newPost){
+    var postList = [ {'body': 'sdsa', 'date' : '2014-04-25'}, {'body': 'sdsa2', 'date' : '2014-01-25'}  ];
     postList.push(newPost);
+    localStorage.setItem('testObject', JSON.stringify(postList));
+    postList.push(newPost);
+    location.reload();
   };
 
   var getPosts = function(){
@@ -35,20 +39,10 @@ app.controller('AboutCtrl', ['$scope', function($scope) {
 }]);
 
 app.controller('BlogCtrl', ['$scope', 'postService', function($scope, postService) {
-      //$scope.posts = postService.getPosts();
-            var newComment = {'body' : 'sdsa3'};
-            var postList = [ {'body': 'sdsa', 'date' : '2014-04-25'}, {'body': 'sdsa2', 'date' : '2014-01-25'}  ];
-            postList.push(newComment);
-            localStorage.setItem('testObject', JSON.stringify(postList));
-            //console.log("Hey!")
-
-      //var postList = [ {'body': 'sdsa'}, {'body': 'sdsa2'}  ];
-      //localStorage.setItem('testObject', JSON.stringify(postList));
       var retrievedObject = localStorage.getItem('testObject');
+
       $scope.posts = JSON.parse(retrievedObject);
-
       console.log('retrievedObject : ', JSON.parse(retrievedObject) );
-
 
       // [{
       //   post: [{
@@ -68,9 +62,4 @@ app.controller('FormCtrl', ['$scope', 'postService', function($scope, postServic
           postService.addPost(post);
       };
 
-      var newComment = {'body' : 'sdsa3'};
-      var postList = [ {'body': 'sdsa', 'date' : '2014-04-25'}, {'body': 'sdsa2', 'date' : '2014-01-25'}  ];
-      postList.push(newComment);
-      localStorage.setItem('testObject', JSON.stringify(postList));
-      console.log("Hey!")
 }]);
