@@ -1,7 +1,7 @@
 var app = angular.module('myApp', ['ngRoute']);
 
 app.service('postService', function(){
-  var postList = [];
+
 
 
 
@@ -35,7 +35,15 @@ app.controller('AboutCtrl', ['$scope', function($scope) {
 }]);
 
 app.controller('BlogCtrl', ['$scope', 'postService', function($scope, postService) {
-      $scope.posts = postService.getPosts();
+      //$scope.posts = postService.getPosts();
+      var postList = [ {'body': 'sdsa'}, {'body': 'sdsa2'}  ];
+      localStorage.setItem('testObject', JSON.stringify(postList));
+      var retrievedObject = localStorage.getItem('testObject');
+      $scope.posts = JSON.parse(retrievedObject);
+
+      console.log('retrievedObject : ', JSON.parse(retrievedObject) );
+
+
       // [{
       //   post: [{
       //     body: "Some text"
@@ -54,8 +62,7 @@ app.controller('FormCtrl', ['$scope', 'postService', function($scope, postServic
           postService.addPost(post);
       };
 
-      var testObject = { 'comment1' : {"content": "test"} };
-      localStorage.setItem('testObject', JSON.stringify(testObject));
-      var retrievedObject = localStorage.getItem('testObject');
-      console.log('retrievedObject : ', JSON.parse(retrievedObject) );
+      var postList = [ {'body': 'sdsa', 'date' : '2014-04-25'}, {'body': 'sdsa2', 'date' : '2014-01-25'}  ];
+      localStorage.setItem('testObject', JSON.stringify(postList));
+      console.log("Hey!")
 }]);

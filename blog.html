@@ -2,10 +2,10 @@
 <p> Material posted here by your peers may be triggering on topics such as sexual assault and violence. </p>
 
 <div ng-controller="BlogCtrl as blogCtrl">
-	<div ng-repeat="post in posts">
+	<div ng-repeat="post in posts track by $index">
 		<p>{{post.body}}</p>
 		<p>{{post.date}}</p>
-		<p>Location: {{post.location}}</p>
+		<!--<p>Location: {{post.location}}</p>-->
 	</div>
 </div>
 <form id="sortBy">
