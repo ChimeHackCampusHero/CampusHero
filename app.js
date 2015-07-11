@@ -3,14 +3,16 @@ var app = angular.module('myApp', ['ngRoute']);
 app.service('postService', function(){
   var postList = [];
 
+
+
   var addPost = function(newPost){
     postList.push(newPost);
   };
 
   var getPosts = function(){
-    console.log(JSON.stringify(postList)); 
     return postList;  
   };
+
 
   return{
     addPost: addPost,
@@ -24,9 +26,10 @@ app.controller('MainCtrl', ['$scope', "$location", function($scope, $location) {
     // $location.path( "/about" );
     $scope.about = "about.html";
     $scope.blog = "blog.html";
-    $scope.submitForm = "form.html"
+    $scope.submitForm = "form.html";
 
 }]);
+
 app.controller('AboutCtrl', ['$scope', function($scope) {
 
 }]);
