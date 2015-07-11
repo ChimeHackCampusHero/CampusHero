@@ -1,9 +1,16 @@
 /* Creates space under the nav bar*/
+body{
+	background-color: #2c3e50;
+}
 .bump{
 	margin-bottom: 50px;
 }
 
 .box{
-	background-color: #ecf0f1;
+	border-radius: 5px;
+	font-family: railway;
+	font-size: 1.3em;
+	background-color: #34495e;
+	color: #ecf0f1;
 
 }

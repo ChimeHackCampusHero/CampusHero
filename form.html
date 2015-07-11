@@ -1,11 +1,24 @@
 <div ng-controller="FormCtrl">
-	<form novalidate class="simple-form">
-	    Name: <input type="text" ng-model="user.name" /><br />
-	    E-mail: <input type="email" ng-model="user.email" /><br />
-	    Gender: <input type="radio" ng-model="user.gender" value="male" />male
-	    <input type="radio" ng-model="user.gender" value="female" />female<br />
-	    <input type="button" ng-click="reset()" value="Reset" />
-	    <input type="submit" ng-click="update(user)" value="Save" />
+	<h1> Tell the World </h1>
+	<form novalidate id="postForm" class="simple-form">
+	    <textarea name="comment" ng-model="post.body" form="postForm">Enter text here...</textarea>
+	    <br />
+	    Location:
+	    <select name="buildingss">
+			<option value="merrell">Merrell</option>
+			<option value="dakin">Dakin</option>
+			<option value="prescott">Prescott</option>
+			<option value="greenwich">Greenwich</option>
+			<option value="enfield">Enfield</option>
+		</select>
+		<br>
+		<input type="checkbox" name="tYKS" value="tYKS">#thankYouKindStranger
+		<br>
+		<input type="checkbox" name="nOMW" value="nOMW">#notOnMyWatch
+		<br>
+		<input type="checkbox" name="uCD" value="uCD">#unCoolDude
+		<br>
+	    <input type="submit" ng-click="submit(post)" value="Post" />
 	</form>
-	{{master}}
+
 </div>

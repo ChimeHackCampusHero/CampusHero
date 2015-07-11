@@ -3,6 +3,9 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Campus Hero</title>
+	   <!-- Fonts -->
+   <link href='http://fonts.googleapis.com/css?family=Raleway:500,200' rel='stylesheet' type='text/css'>
+   <!-- Style sheet -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<!-- ANGULAR -->
@@ -19,6 +22,7 @@
 	<script type="text/javascript" src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
 </head>
 <body ng-app="myApp">
   	<div ng-controller="MainCtrl">
@@ -36,7 +40,8 @@
 				</div>
 				<div class="navbar-collapse collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav navbar-right">
-						<li ng-click="function()"><a href="#">This Will Be A Nav Bar</a></li>
+						<li ng-click="function()"><a href="#">Blog</a></li>
+						<li ng-click="function()"><a href="#">Campus Stats</a></li>
 					</ul>
 				</div>
 			</div>
@@ -53,14 +58,16 @@
 				    <div ng-include="url">
 				    </div>
 				</div> -->
+
 				<div class="blog box col-xs-12 col-md-7 col-md-offset-2">
 				    <div ng-include="blog">
 				    </div>
 				</div>
 
-				<div class="about box col-xs-3">
+				<div class="about box col-xs-12 col-md-3">
 					<div ng-include="about">
 				    </div>
+				    <br>
 				    <div id="form" ng-include="submitForm">
 				    </div>
 				</div>
