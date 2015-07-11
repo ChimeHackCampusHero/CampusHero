@@ -1,15 +1,30 @@
 angular.module('myApp', ['ngRoute'])
 
 .controller('MainCtrl', ['$scope', "$location", function($scope, $location) {
-$scope.url = "about.html";
-$scope.title = "About";
-  $scope.partials =
-  	[ { name: 'projects.html', url: 'projects.html'},
-      { name: 'contact.html', url: 'contact.html'} ];
-  $scope.partial = $scope.partials[0];
- $scope.about = function(){
-    $scope.title = "About";
+
     // $location.path( "/about" );
-    $scope.url = "about.html";
-  }
-}]);
+    $scope.about = "about.html";
+    $scope.blog = "blog.html";
+    $scope.submitForm = "form.html"
+
+}])
+.controller('AboutCtrl', ['$scope', function($scope) {
+
+}])
+.controller('BlogCtrl', ['$scope', function($scope) {
+
+}])
+.controller('FormCtrl', ['$scope', function($scope) {
+	 $scope.master = {};
+
+      $scope.update = function(user) {
+        $scope.master = angular.copy(user);
+      };
+
+      $scope.reset = function() {
+        $scope.user = angular.copy($scope.master);
+      };
+
+      $scope.reset();
+
+}])
