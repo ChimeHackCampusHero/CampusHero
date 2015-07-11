@@ -1,2 +1,8 @@
 <h3> Trigger warning: </h3>
 <p> Material posted here by your peers may be triggering on topics such as sexual assault and violence. </p>
+<div ng-controller="BlogCtrl as blogCtrl">
+	<div ng-repeat="post in posts">
+		<p>{{post.body}}</p>
+		<p>{{post.date}}</p>
+	</div>
+</div>

@@ -1,6 +1,6 @@
 <div ng-controller="FormCtrl">
 	<h1> Tell the World </h1>
-	<form novalidate id="postForm" class="simple-form">
+	<form ng-submit="submit()" novalidate id="postForm" class="simple-form">
 	    <textarea name="comment" ng-model="post.body" form="postForm">Enter text here...</textarea>
 	    <br />
 	    Location:
@@ -18,7 +18,7 @@
 		<br>
 		<input type="checkbox" name="uCD" value="uCD">#unCoolDude
 		<br>
-	    <input id="submitButton" type="submit" ng-click="submit(post)" value="Post" />
+	    <input id="submitButton" type="submit"  value="Post" />
 	</form>
 
 </div>
