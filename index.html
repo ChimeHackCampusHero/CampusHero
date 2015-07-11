@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<title>Campus Hero</title>
 	   <!-- Fonts -->
-   <link href='http://fonts.googleapis.com/css?family=Raleway:500,200' rel='stylesheet' type='text/css'>
+   <link href='http://fonts.googleapis.com/css?family=Carrois+Gothic|Reenie+Beanie|Arapey' rel='stylesheet' type='text/css'>
    <!-- Style sheet -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="style.css">
@@ -47,28 +47,25 @@
 			</div>
 		</div> <!-- End nav -->
 		<div class="container">
-			<div class="row">
 				<!-- To get the content below the heading -->
-				<div class="bump row">
-					<div class="col-xs-12">
-					</div>
+			<div class="bump row">
+				<div class="col-xs-12">
 				</div>
-						<!-- The partials -->
-				<!-- <div class="thePartial col-xs-12">
-				    <div ng-include="url">
-				    </div>
-				</div> -->
-
-				<div class="blog box col-xs-12 col-md-7 col-md-offset-2">
-				    <div ng-include="blog">
+			</div>
+			<div class="row">
+		<!-- The About Container on the Left -->
+				<div id="aboutBox" class="col-xs-12 col-md-3">
+					<div class="box" ng-include="about">
 				    </div>
 				</div>
-
-				<div class="about box col-xs-12 col-md-3">
-					<div ng-include="about">
+		<!-- The blog of posts -->
+				<div id="blog" class="col-xs-12 col-md-6">
+				    <div class="box" ng-include="blog">
 				    </div>
-				    <br>
-				    <div id="form" ng-include="submitForm">
+				</div>
+		<!-- The input form for new posts -->
+				<div id="formBox" class="col-xs-12 col-md-3">
+					 <div class="box" id="form" ng-include="submitForm">
 				    </div>
 				</div>
 			</div>
