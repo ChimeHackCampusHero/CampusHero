@@ -1,18 +1,14 @@
 var app = angular.module('myApp', ['ngRoute']);
 
 app.service('postService', function(){
-  var postList = [
-        {'body':'sdsa',
-      'date': '2014-21-21'},
-
-        {'body':'asdas',
-          'date': '2014-21-21'}];
+  var postList = [];
 
   var addPost = function(newPost){
     postList.push(newPost);
   };
 
   var getPosts = function(){
+    console.log(JSON.stringify(postList)); 
     return postList;  
   };
 
@@ -46,26 +42,14 @@ app.controller('BlogCtrl', ['$scope', 'postService', function($scope, postServic
 
 
 
-app.controller('FormCtrl', ['$scope', function($scope, postService) {
-	 $scope.master = {};
-   $scope.posts = [];
-   //$scope.postText = 'CampusHero';
-   $scope.post = {};
-      //$scope.update = function(user) {
-        //$scope.master = angular.copy(user);
-      //};
+app.controller('FormCtrl', ['$scope', 'postService', function($scope, postService) {
 
-      $scope.submit = function(posts){
-        
-          $scope.posts.push(this.post);
-        //  $scope.postText = ""; 
-        
+      $scope.submit = function(post){
+          date = new Date();
+          correctDate = date.toString('dddd, MMMM ,yyyy'); 
+          post.date = correctDate;
+          postService.addPost(post);
       };
 
-      //$scope.reset = function() {
-     //   $scope.user = angular.copy($scope.master);
-      //};
-
-      //$scope.reset();
 
 }]);
