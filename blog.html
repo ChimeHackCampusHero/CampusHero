@@ -1,8 +1,31 @@
 <h3> Trigger warning: </h3>
 <p> Material posted here by your peers may be triggering on topics such as sexual assault and violence. </p>
+<<<<<<< HEAD
+
+=======
 <div ng-controller="BlogCtrl as blogCtrl">
 	<div ng-repeat="post in posts">
 		<p>{{post.body}}</p>
 		<p>{{post.date}}</p>
 	</div>
 </div>
+<form id="sortBy">
+	<select>
+	  <option value="mostRecent">Most Recent</option>
+	  <option value="location">Location</option>
+	  <option value="tag">Tag</option>
+	</select>
+</form>
+<form ng-show="">
+	<!-- show only if sort by == tag -->
+	<select>
+		<option value="nOMW">#thankYouKindStranger</option>
+		<option value="nOMW"> #unCoolDude</option>
+		<option value="nOMW"> #notOnMyWatch</option>
+	</select>
+</form>
+
+<form>
+	<!-- ng-repeat building in buildings -->
+</form>
+>>>>>>> 21c14ce3cd775d0f4ad25afa5a582973426d4a49
