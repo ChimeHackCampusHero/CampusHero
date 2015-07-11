@@ -54,5 +54,8 @@ app.controller('FormCtrl', ['$scope', 'postService', function($scope, postServic
           postService.addPost(post);
       };
 
-
+      var testObject = { 'comment1' : {"content": "test"} };
+      localStorage.setItem('testObject', JSON.stringify(testObject));
+      var retrievedObject = localStorage.getItem('testObject');
+      console.log('retrievedObject : ', JSON.parse(retrievedObject) );
 }]);
