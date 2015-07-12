@@ -135,7 +135,7 @@ app.controller('BlogCtrl', ['$scope', 'postService', function($scope, postServic
       //     tags = tags + $scope.posts[obj].tags[tag];
         
       if($scope.posts[obj].location != undefined){
-        getLocation($scope.posts[obj].location, $scope.posts[obj].body); //, $scope.posts[obj].body, addMarker  
+        getLocation($scope.posts[obj].location, $scope.posts[obj].body, JSON.stringify($scope.posts[obj].tags)); //, $scope.posts[obj].body, addMarker  
       }
     };
 }]);
@@ -149,8 +149,6 @@ app.controller('StatsCtrl', ['$scope', function($scope){
 	  //   [65, 59, 80, 81, 56, 55, 40],
 	  //   [28, 48, 40, 19, 86, 27, 90]
 	  // ];
-
-
 
 }]);
 app.controller("BarCtrl", function ($scope) {
@@ -200,25 +198,25 @@ var mapOptions = {
     zoom: 16,
     center: college
 };
-var getLocation = function(location, body){ //, body, addMarker
+var getLocation = function(location, body, tags){ //, body, addMarker
   var prescott = new google.maps.LatLng(42.323456, -72.533763);
   var merill = new google.maps.LatLng(42.323488, -72.529933);
   var dakin = new google.maps.LatLng(42.322782, -72.530330);
   var enfield = new google.maps.LatLng(42.325520, -72.531873);
    //console.log(loc);
     if(location == "Merril"){
-      addMarker(merill, body);
+      addMarker(merill, body, tags);
     }else if(location == "Prescott"){
-      addMarker(prescott, body);
+      addMarker(prescott, body, tags);
     } else if(location == "Dakin"){
-      addMarker(dakin, body);
+      addMarker(dakin, body, tags);
     } else if(location == "Enfield"){
-      addMarker(enfield, body);
+      addMarker(enfield, body, tags);
     }
 };
 
 
-var addMarker = function(location, body){ // body
+var addMarker = function(location, body, tags){ // body
   var marker = new google.maps.Marker({
     map:map,
     draggable:false,
@@ -232,6 +230,8 @@ var addMarker = function(location, body){ // body
       '<h1 id="firstHeading" class="firstHeading"></h1>'+
       '<div id="bodyContent">'+
       '<p>'+ body+'</p>'+
+      '<p>'+ 'Tags: ' + tags +'</p>'+
+
       '</div>'+
       '</div>'; 
   var infoWindow = new google.maps.InfoWindow({
