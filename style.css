@@ -13,6 +13,8 @@ h1, h2, h3{
 	color: white;
 	text-align: center;
 }
+
+
 #topPostBox{
 	font-size: 19px;
 	font-style: normal;
@@ -28,16 +30,24 @@ h1, h2, h3{
 	margin: 10px -10px 5px -10px;
 	padding: 5px 10px 5px 10px;
 }
+
+#trigger-box {
+	background: #C1C3D8;
+	border-radius: 10px;
+	padding: 1px 20px 1px 20px;
+}
+
 .navbar-brand{
 	font-family: 'Asap', cursive;
 	font-weight: 700;
 	font-style: italic;
-	color: white !important;
+	color: #6F729E  !important;
 	font-size: 40px !important;
 }
 .navbar{
-	background-color: #4a4e6d;
+	background-color: #fff;
 	border: none;
+	color: #6F729E
 }
 
 .navbar-toggle{
@@ -99,12 +109,15 @@ textarea{
 }
 
 .postBody{
-	background-color: #3b3e57;
+	background-color: #fff;
 	border-radius: 8px;
 	padding: 15px 25px 10px 25px;
+	color: #4A4D71;
+
 }
 .timeAndLocation{
 	padding: 10px 0px 10px 0px;
+	color: #9496AC;
 }
 .showStats{
 	display: block;
@@ -113,7 +126,6 @@ textarea{
 .time{
 	float: right;
 	text-align: right;
-	color: #d8d9dd;
 }
 .icon-time, .icon-location{
 	font-size: 32px;
@@ -138,7 +150,7 @@ textarea{
 		border: none;
 	}
 	.navbar{
-		background-color: #3b3e57;
+		background-color: #fff;
 	}
 	#form{
 		border-radius: 8px;
