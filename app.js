@@ -129,6 +129,11 @@ app.controller('BlogCtrl', ['$scope', 'postService', function($scope, postServic
     var retrievedObject = localStorage.getItem('testObject');
     $scope.posts = JSON.parse(retrievedObject);
     for(var obj in $scope.posts){
+      //var tags;
+      // if ($scope.posts[obj].location != undefined){
+      //   for(var tag in $scope.posts[obj].tags)
+      //     tags = tags + $scope.posts[obj].tags[tag];
+        
       if($scope.posts[obj].location != undefined){
         getLocation($scope.posts[obj].location, $scope.posts[obj].body); //, $scope.posts[obj].body, addMarker  
       }
@@ -227,7 +232,6 @@ var addMarker = function(location, body){ // body
       '<h1 id="firstHeading" class="firstHeading"></h1>'+
       '<div id="bodyContent">'+
       '<p>'+ body+'</p>'+
-      '<p>'+'</p>'+
       '</div>'+
       '</div>'; 
   var infoWindow = new google.maps.InfoWindow({
