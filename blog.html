@@ -7,7 +7,7 @@
 
 			<span class="icon-location"></span>{{post.location}}
  			<span class="time"><span class="icon-time"></span> <span>{{post.date | date:'EEEE, h:mm a'}}</span></span>
-            <span ng-repeat="tag in post.tags">{{tag }}</span>
+            <span ng-repeat-start="tag in post.tags" ng-bind="tag"></span> <span ng-repeat-end></span>
 
 		</div>
 		<div class="postBody">
