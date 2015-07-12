@@ -131,7 +131,6 @@ app.controller('BlogCtrl', ['$scope', 'postService', function($scope, postServic
       if($scope.posts[obj].location != undefined){
         getLocation($scope.posts[obj].location);  
       }
-      
     };
 }]);
 
