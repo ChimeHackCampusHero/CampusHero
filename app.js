@@ -8,7 +8,7 @@ app.service('postService', function(){
            {
                 "id": 1,
                 "body": " This is comment 1.",
-                "date": "2012-04-23T18:25:43.511Z",
+                "date": 1436672771000,
                 "location": "Merril",
                 "tags": [
                     "#uncooldude",
@@ -18,7 +18,7 @@ app.service('postService', function(){
             {
                 "id": 1,
                 "body": " This is comment 2.",
-                "date": "2012-04-24T18:25:43.511Z",
+                "date": 1436672521382,
                 "location": "Merril",
                 "tags": [
                     "#uncooldude",
@@ -92,7 +92,7 @@ app.controller('FormCtrl', ['$scope', 'postService', function($scope, postServic
       $scope.submit = function(post){
           console.log("Post: ", post);
           date = new Date();
-          correctDate = new Date();
+          correctDate = new Date().getTime();
           post.date = correctDate;
           post.tags = tags;
           postService.addPost(post);
