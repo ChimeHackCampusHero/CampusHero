@@ -104,16 +104,16 @@
 				</div>
 				<!-- Include stats page -->
 				<div ng-show="showStats" id="statPage">
-					<div class="box" ng-include="stats">
-					</div>
-                    <div class="col-xs-12">
+	                <div class="col-xs-12">
                         <div ng-controller="BarCtrl">
-                            <canvas id="bar" class="chart chart-bar" data="data"labels="labels"></canvas>
+                            <canvas id="bar" class="chart chart-bar" data="data"labels="labels" series="series"></canvas>
                         </div>
                     </div>
+
                     <div ng-controller="DoughnutCtrl" id="doughnutBox">
 						<canvas id="doughnut" class="chart chart-doughnut" data="data" labels="labels"></canvas>
 					</div>
+					
 				</div>
 			</div>
 		</div> <!-- End container -->
