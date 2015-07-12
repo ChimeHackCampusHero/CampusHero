@@ -185,10 +185,10 @@ app.controller('FormCtrl', ['$scope', 'postService', function($scope, postServic
 //MAPPING STUFF
 
 var college = new google.maps.LatLng(42.324365,-72.5321567);
-var prescott = new google.maps.LatLng(42.3235537,-72.5342356);
-var merill = new google.maps.LatLng(42.3235539,-72.5342356);
-var dakin = new google.maps.LatLng(42.3235535,-72.5342356);
-var enfield = new google.maps.LatLng(42.3235537,-72.5342359);
+// var prescott = new google.maps.LatLng(42.3235537,-72.5342356);
+// var merill = new google.maps.LatLng(42.3235539,-72.5342356);
+// var dakin = new google.maps.LatLng(42.3235535,-72.5342356);
+// var enfield = new google.maps.LatLng(42.3235537,-72.5342359);
 var marker;
 var map;
 var google;
@@ -197,10 +197,10 @@ var mapOptions = {
     center: college
 };
 var getLocation = function(loc){
-  var prescott = new google.maps.LatLng(42.3235537,-72.5342356);
-  var merill = new google.maps.LatLng(42.3235539,-72.5342356);
-  var dakin = new google.maps.LatLng(42.3235535,-72.5342356);
-  var enfield = new google.maps.LatLng(42.3235537,-72.5342359);
+  var prescott = new google.maps.LatLng(42.323456, -72.533763);
+  var merill = new google.maps.LatLng(42.323488, -72.529933);
+  var dakin = new google.maps.LatLng(42.322782, -72.530330);
+  var enfield = new google.maps.LatLng(42.325520, -72.531873);
    console.log(loc);
     if(loc == "Merril"){
       addMarker(merill);
