@@ -4,8 +4,8 @@
 	<meta charset="UTF-8">
 	<title>Campus Hero</title>
 	   <!-- Fonts -->
-   <link href='http://fonts.googleapis.com/css?family=Carrois+Gothic|Reenie+Beanie|Arapey' rel='stylesheet' type='text/css'>
-   <!-- Style sheet -->
+   	<link href='http://fonts.googleapis.com/css?family=Carrois+Gothic|Reenie+Beanie|Arapey' rel='stylesheet' type='text/css'>
+   	<!-- Style sheet -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<!-- ANGULAR -->
@@ -14,6 +14,9 @@
 
 	<!-- GOOGLE MAPS -->
 	<script src="https://maps.googleapis.com/maps/api/js"></script>
+	<!-- Graphs -->
+    <script src="Chart.js/Chart.js"></script>
+    <script src="angular-chart.js/angular-chart.js"></script>
 
 	<!-- MY JAVASCRIPT -->
 	<script language="javascript" type="text/javascript" src="app.js"></script>
@@ -49,7 +52,7 @@
 				<div class="navbar-collapse collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav navbar-right">
 						<li ng-click="goBlog()"><a href="#">Blog</a></li>
-						<li ng-click="goStats()"><a href="#">Campus Stats</a></li>
+						<li ng-click="goMap()"><a href="#">Heat Map</a></li>
 						<li ng-click="goStats()"><a href="#">Campus Stats</a></li>
 					</ul>
 				</div>
@@ -67,6 +70,7 @@
 					<div class="box" ng-include="about">
 				    </div>
 				</div> -->
+
 				<div ng-show="page == 'blog'" id="blogStuff">
 					<!-- The input form for new posts -->
 					<div id="formBox" class="col-xs-12 col-sm-4 col-sm-push-8">
@@ -82,7 +86,12 @@
 
 					</div>
 				</div>
-		
+				<!-- Include map page -->
+				<div ng-show="page == 'map'" id="statPage">
+					<div class="box" ng-include="map">
+					</div>
+				</div>
+				<!-- Include stats page -->
 				<div ng-show="page == 'stats'" id="statPage">
 					<div class="box" ng-include="stats">
 					</div>
