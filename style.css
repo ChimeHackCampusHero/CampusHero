@@ -127,9 +127,12 @@ textarea{
 	margin-right: -15px;
 	margin-left: -15px;
 	padding: 10px 15px 10px 15px;
-	border-top: 3px solid #6b6f91;
-}
 
+}
+#locationWord{
+	color:#6f729e;
+	padding-bottom: 200px;
+}
 .postBody{
 	background-color: #fff;
 	border-radius: 8px;
