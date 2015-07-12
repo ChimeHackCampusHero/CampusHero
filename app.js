@@ -1,8 +1,5 @@
 var app = angular.module('myApp', ['ngRoute']);
 
-
-
-
 app.service('postService', function(){
 
   var initData = function() {
@@ -56,16 +53,30 @@ app.service('postService', function(){
 });
 
 app.controller('MainCtrl', ['$scope', "$location", function($scope, $location) {
+    $scope.showMain = true;
+    $scope.showMap = false;
+    $scope.showStats = false;
+
     //localStorage.clear();
 	$scope.page = 'blog';
 	$scope.goStats = function(){
-		$scope.page = "stats";
+		//$scope.page = "stats";
+		$scope.showMain = false;
+        $scope.showMap = false;
+        $scope.showStats = true;
+
 	};
 	$scope.goBlog = function(){
-		$scope.page = "blog";
+		//$scope.page = "blog";
+		$scope.showMain = true;
+            $scope.showMap = false;
+            $scope.showStats = false;
 	};
 	$scope.goMap = function(){
-		$scope.page = "map";
+		//$scope.page = "map";
+		$scope.showMain = false;
+        $scope.showMap = true;
+        $scope.showStats = false;
 	};
     // $location.path( "/about" );
     $scope.about = "about.html";
@@ -81,7 +92,7 @@ app.controller('AboutCtrl', ['$scope', function($scope) {
 
 app.controller('BlogCtrl', ['$scope', 'postService', function($scope, postService) {
 
-  // Contains the filter options
+  // Contains the location options
   $scope.locationOptions =  ["All", "Dakin", "Enfield", "Merill", "Prescott"];
 
   $scope.selectedLocation = "All";
@@ -96,6 +107,23 @@ app.controller('BlogCtrl', ['$scope', 'postService', function($scope, postServic
         return false;
       }
     };
+
+   /*
+      // Contains the tag options
+      $scope.locationOptions =
+      [ "All", "#ThankYouKindStranger", "#Consent", "#YesMeansYes", "#OnlyWhenIWantIt", "#NotOnMyWatch", "#SexualAssault", "#UnCoolDude", "#Creepy", "#PartyCulture" ];
+
+      $scope.selectedLocation = "All";
+
+        // Custom filter for sorting by location
+        $scope.customFilter = function(post) {
+          if (post.tags.indexOf($scope.selectedTag) != -1) {
+            return false;
+          } else {
+            return true;
+          }
+        };
+    */
 
     var retrievedObject = localStorage.getItem('testObject');
     $scope.posts = JSON.parse(retrievedObject);
