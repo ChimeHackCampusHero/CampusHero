@@ -100,20 +100,21 @@
 				</div>
 				<!-- Include map page -->
 				<div ng-show="showMap" id="statPage">
-					
 				</div>
 				<!-- Include stats page -->
 				<div ng-show="showStats" id="statPage">
-	                <div class="col-xs-12">
+					<div class="showStats">
+	                <div class="col-xs-12 col-sm-offset-2 col-sm-8">
                         <div ng-controller="BarCtrl">
                             <canvas id="bar" class="chart chart-bar" data="data"labels="labels" series="series"></canvas>
                         </div>
                     </div>
-
-                    <div ng-controller="DoughnutCtrl" id="doughnutBox">
-						<canvas id="doughnut" class="chart chart-doughnut" data="data" labels="labels"></canvas>
+					<div class="col-xs-12 col-sm-offset-2 col-sm-8">
+	                    <div ng-controller="DoughnutCtrl" id="doughnutBox">
+							<canvas id="doughnut" class="chart chart-doughnut" data="data" labels="labels"></canvas>
+						</div>
 					</div>
-					
+					</div>
 				</div>
 			</div>
 		</div> <!-- End container -->
