@@ -21,7 +21,9 @@
 	<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 	<script type="text/javascript" src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href='http://fonts.googleapis.com/css?family=Asap' rel='stylesheet' type='text/css'>
 
 </head>
 <body ng-app="myApp">
@@ -40,8 +42,9 @@
 				</div>
 				<div class="navbar-collapse collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav navbar-right">
-						<li ng-click="function()"><a href="#">Blog</a></li>
-						<li ng-click="function()"><a href="#">Campus Stats</a></li>
+						<li ng-click="goBlog()"><a href="#">Blog</a></li>
+						<li ng-click="goStats()"><a href="#">Campus Stats</a></li>
+						<li ng-click="goStats()"><a href="#">Campus Stats</a></li>
 					</ul>
 				</div>
 			</div>
@@ -54,19 +57,25 @@
 			</div>
 			<div class="row">
 		<!-- The About Container on the Left -->
-				<div id="aboutBox" class="col-xs-12 col-md-3">
+				<!-- <div id="aboutBox" class="col-xs-12 col-md-3">
 					<div class="box" ng-include="about">
 				    </div>
+				</div> -->
+				<div ng-show="page == 'blog'" id="blogStuff">
+					<!-- The input form for new posts -->
+					<div id="formBox" class="col-xs-12 col-sm-4 col-sm-push-8">
+						 <div class="box" id="form" ng-include="submitForm">
+					    </div>
+					</div>
+					<!-- The blog of posts -->
+					<div id="blog" class="col-xs-12 col-sm-8 col-sm-pull-4">
+					    <div class="box" ng-include="blog">
+					    </div>
+					</div>
 				</div>
-		<!-- The blog of posts -->
-				<div id="blog" class="col-xs-12 col-md-6">
-				    <div class="box" ng-include="blog">
-				    </div>
-				</div>
-		<!-- The input form for new posts -->
-				<div id="formBox" class="col-xs-12 col-md-3">
-					 <div class="box" id="form" ng-include="submitForm">
-				    </div>
+				<div ng-show="page == 'stats'" id="statPage">
+					<div class="box" ng-include="stats">
+					</div>
 				</div>
 			</div>
 		</div> <!-- End container -->

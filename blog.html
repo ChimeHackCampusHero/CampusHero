@@ -1,5 +1,6 @@
-<h3> Trigger warning: </h3>
-<p> Material posted here by your peers may be triggering on topics such as sexual assault and violence. </p>
+	<h3> Trigger warning: </h3>
+	<p> Material posted here by your peers may be triggering on topics such as sexual assault and violence. </p>
+
 
 <div ng-controller="BlogCtrl as blogCtrl">
 	<div ng-repeat="post in posts | orderBy: '-date' ">
@@ -7,24 +8,25 @@
 		<p>{{post.date}}</p>
 		<!--<p>Location: {{post.location}}</p>-->
 	</div>
+
+	<form id="sortBy">
+		<select>
+		  <option value="mostRecent">Most Recent</option>
+		  <option value="location">Location</option>
+		  <option value="tag">Tag</option>
+		</select>
+	</form>
+	<form ng-show="">
+		<!-- show only if sort by == tag -->
+		<select>
+			<option value="nOMW">#thankYouKindStranger</option>
+			<option value="nOMW"> #unCoolDude</option>
+			<option value="nOMW"> #notOnMyWatch</option>
+		</select>
+	</form>
+
+<!-- 	<form>
+		ng-repeat building in buildings
+	</form> -->
+
 </div>
-<form id="sortBy">
-	<select>
-	  <option value="mostRecent">Most Recent</option>
-	  <option value="location">Location</option>
-	  <option value="tag">Tag</option>
-	</select>
-</form>
-<form ng-show="">
-	<!-- show only if sort by == tag -->
-	<select>
-		<option value="nOMW">#thankYouKindStranger</option>
-		<option value="nOMW"> #unCoolDude</option>
-		<option value="nOMW"> #notOnMyWatch</option>
-	</select>
-</form>
-
-<form>
-	<!-- ng-repeat building in buildings -->
-</form>
-
