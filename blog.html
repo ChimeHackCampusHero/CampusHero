@@ -6,6 +6,7 @@
 	<div ng-repeat="post in posts | orderBy: '-date' ">
 		<p>{{post.body}}</p>
 		<p>{{post.date}}</p>
+        <p>{{post.tags}}</p>
 		<!--<p>Location: {{post.location}}</p>-->
 	</div>
 
