@@ -57,7 +57,6 @@ app.service('postService', function(){
 
 app.controller('MainCtrl', ['$scope', "$location", function($scope, $location) {
     //localStorage.clear();
-	console.log("FOO");
 	$scope.page = 'blog';
 	$scope.goStats = function(){
 		$scope.page = "stats";
@@ -78,12 +77,27 @@ app.controller('AboutCtrl', ['$scope', function($scope) {
 
 app.controller('BlogCtrl', ['$scope', 'postService', function($scope, postService) {
 
-      var retrievedObject = localStorage.getItem('testObject');
-      $scope.posts = JSON.parse(retrievedObject);
-      for (post in $scope.posts){
-        console.log(JSON.stringify($scope.posts));
-        getLocation(post.location);
+  // Contains the filter options
+  $scope.locationOptions =  ["All", "Dakin", "Enfield", "Merill", "Prescott"];
+
+  $scope.selectedLocation = "All";
+
+    // Custom filter for sorting by location
+    $scope.customFilter = function(post) {
+      if (post.location === $scope.selectedLocation) {
+        return true;
+      } else if ($scope.selectedLocation === "All") {
+        return true;
+      } else {
+        return false;
       }
+    };
+
+    var retrievedObject = localStorage.getItem('testObject');
+    $scope.posts = JSON.parse(retrievedObject);
+    for (post in $scope.posts){
+      getLocation(post.location);
+    }
 }]);
 
 
@@ -94,20 +108,14 @@ app.controller('FormCtrl', ['$scope', 'postService', function($scope, postServic
       $scope.locations = ["Merill", "Dakin", "Prescott", "Enfield"];
 
       $scope.submit = function(post){
-          console.log("Post: ", post);
-          date = new Date();
-
-          correctDate = new Date().getTime();
-          post.date = correctDate;
+          post.date = new Date().getTime();
           post.tags = tags;
           postService.addPost(post);
       };
 
        $scope.addTag = function(tag) {
-          console.log("You added a tag! ", tag);
           tags.push(tag);
-
-			document.postForm.comment.value += tag;
+	      document.postForm.comment.value += tag;
         };
 }]);
 
@@ -130,7 +138,7 @@ var getLocation = function(loc){
   var merill = new google.maps.LatLng(42.3235539,-72.5342356);
   var dakin = new google.maps.LatLng(42.3235535,-72.5342356);
   var enfield = new google.maps.LatLng(42.3235537,-72.5342359);
-  console.log(loc);
+   console.log(loc);
     if(loc == "Merril"){
       addMarker(merill);
     }else if(loc == "Prescott"){
