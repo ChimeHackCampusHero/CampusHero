@@ -26,7 +26,7 @@ h1, h2, h3{
 	font-size: 40px !important;
 }
 .navbar{
-	background-color: #4a436d;
+	background-color: #4a4e6d;
 	border: none;
 }
 .navbar-toggle{
@@ -37,6 +37,7 @@ h1, h2, h3{
 a{
 	color: #e74c3c;
 }
+/*For the dropdown menu*/
 .btn{
 	width: 100%;
 	background-color: #303246;
@@ -44,12 +45,21 @@ a{
 	border: 3px solid #b8b9c5;
 	border-radius: 8px;
 }
+.dropdown-menu{
+	width: 100%;
+	background-color: rgba(46,50,70, .8);
+	color: white !important;
+}
+.dropdown-menu li a{
+	color: white;
+}
 #submitButton{
 	padding: 10px;
 	background-color: #2590e2;
 	border: none;
 	border-radius: 8px;
 	width: 100%;
+	margin-bottom: 10px;
 }
 textarea{
 	border-radius: 8px;
@@ -66,6 +76,30 @@ textarea{
 	text-align: center;
 }
 
-@media{
+#blog{
+	background-color: #4a4e6d;
+}
+.postBox{
+	margin-right: -15px;
+	margin-left: -15px;
+	padding: 15px;
+	border-top: 3px solid #6b6f91;
+}
 
+.postBody{
+	background-color: #3b3e57;
+	border-radius: 8px;
+	padding: 15px 25px 10px 25px;
+}
+.timeAndLocation{
+	padding: 10px 0px 10px 0px;
+}
+.time{
+	float: right;
+	text-align: right;
+}
+.icon-time, .icon-location{
+	font-size: 32px;
+	position:relative;
+	bottom: -7px;
 }
