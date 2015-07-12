@@ -1,11 +1,14 @@
 <div id="stats" ng-controller="StatsCtrl">
 	THIS IS WORKING!!
 	<div class="graphBox">
-	    <canvas id="bar" class="chart chart-bar" data="data" labels="labels" height="300px" click="clickAttempt" ></canvas>
+		<div ng-controller="BarCtrl">
+			<canvas id="bar" class="chart chart-bar" data="data"labels="labels"></canvas>
+		</div>
 	</div>
+	This is underneath!
 
 
-	<div id="doughnutBox">
+<!-- 	<div id="doughnutBox">
 		<canvas id="doughnut" class="chart chart-doughnut" data="dataDetail" labels="labelsDetail" legend="true"></canvas>
-	</div>
+	</div> -->
 </div>

@@ -3,6 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Campus Hero</title>
+
 	   <!-- Fonts -->
    	<link href='http://fonts.googleapis.com/css?family=Carrois+Gothic|Reenie+Beanie|Arapey' rel='stylesheet' type='text/css'>
    	<!-- Style sheet -->
@@ -12,11 +13,14 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.16/angular.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.16/angular-route.js"></script>
 
-	<!-- GOOGLE MAPS -->
-	<script src="https://maps.googleapis.com/maps/api/js"></script>
 	<!-- Graphs -->
     <script src="Chart.js/Chart.js"></script>
     <script src="angular-chart.js/angular-chart.js"></script>
+	<script src="bower_components/angular-chart.js/dist/angular-chart.js"></script>
+	<link rel="stylesheet" href="bower_components/angular-chart.js/dist/angular-chart.css">
+
+	<!-- GOOGLE MAPS -->
+	<script src="https://maps.googleapis.com/maps/api/js"></script>
 
 	<!-- MY JAVASCRIPT -->
 	<script language="javascript" type="text/javascript" src="app.js"></script>
@@ -32,7 +36,7 @@
 
 <link href='http://fonts.googleapis.com/css?family=Asap' rel='stylesheet' type='text/css'>
 <!-- icons -->
-<link rel="stylesheet" href="/campus_font/style.css"></head>
+	<link rel="stylesheet" href="/campus_font/style.css"></head>
 
 </head>
 <body ng-app="myApp">
@@ -70,6 +74,11 @@
 					<div class="box" ng-include="about">
 				    </div>
 				</div> -->
+				<div class="col-xs-12">
+				<div ng-controller="BarCtrl">
+					<canvas id="bar" class="chart chart-bar" data="data"labels="labels"></canvas>
+				</div>
+				</div>
 
 				<div ng-show="page == 'blog'" id="blogStuff">
 					<!-- The input form for new posts -->
@@ -87,10 +96,10 @@
 					</div>
 				</div>
 				<!-- Include map page -->
-				<div ng-show="page == 'map'" id="statPage">
+<!-- 				<div ng-show="page == 'map'" id="statPage">
 					<div class="box" ng-include="map">
 					</div>
-				</div>
+				</div> -->
 				<!-- Include stats page -->
 				<div ng-show="page == 'stats'" id="statPage">
 					<div class="box" ng-include="stats">
@@ -100,6 +109,6 @@
 		</div> <!-- End container -->
 
 	</div>
-		<div id="map-canvas">dsadsad</div>
+		<!-- <div id="map-canvas">dsadsad</div> -->
 </body>
 </html>
