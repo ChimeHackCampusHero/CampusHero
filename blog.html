@@ -17,17 +17,24 @@
 		<!--<p>Location: {{post.location}}</p>-->
 	</div>
 
-    Filter:
+    Location:
     <select ng-model="selectedLocation" ng-options="location for location in locationOptions">
     </select>
 
-	<form id="sortBy">
+    <!--
+    Tag:
+    <select ng-model="selectedTag" ng-options="tag for tag in tags">
+    </select>
+
+
+    <form id="sortBy">
 		<select>
 		  <option value="mostRecent">Most Recent</option>
 		  <option value="location">Location</option>
 		  <option value="tag">Tag</option>
 		</select>
 	</form>
+	-->
 
 	<form ng-show="">
 		<!-- show only if sort by == tag -->
