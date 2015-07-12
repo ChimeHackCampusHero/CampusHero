@@ -218,23 +218,29 @@ var addMarker = function(location){ // body
     animation: google.maps.Animation.DROP,
     position: location,
   });
-  // var contentString = '<div id="content">'+
-  //     '<div id="siteNotice">'+
-  //     '</div>'+
-  //     '<h1 id="firstHeading" class="firstHeading"></h1>'+
-  //     '<div id="bodyContent">'+
-  //     '<p>'+"ASD"+'</p>'+
-  //     '<p>'+'</p>'+
-  //     '</div>'+
-  //     '</div>';
-  // var infoWindow = new google.maps.infoWindow({
-  //   content: contentString
-  // });
-  // marker.setMap(map);
-  // google.maps.event.addListener(marker, 'click', function() {
-  //   infowindow.open(map,marker);
-  // });
+    marker.setMap(map);
+    // addInfo(marker);
 };
+//   var contentString = '<div id="content">'+
+//       '<div id="siteNotice">'+
+//       '</div>'+
+//       '<h1 id="firstHeading" class="firstHeading"></h1>'+
+//       '<div id="bodyContent">'+
+//       '<p>'+"ASD"+'</p>'+
+//       '<p>'+'</p>'+
+//       '</div>'+
+//       '</div>';
+// function addInfo(marker){
+
+//   var infoWindow = new google.maps.infoWindow({
+//     content: contentString
+//   });
+
+//   google.maps.event.addListener(marker, 'click', function() {
+//     infowindow.open(map,marker);
+//   });
+// };
+
 google.init = function initialize() {
 
   map = new google.maps.Map(document.getElementById('map-canvas'),
