@@ -10,6 +10,7 @@ app.service('postService', function(){
     var postList = JSON.parse(retrievedObject);
     postList.push(newPost);
     localStorage.setItem('testObject', JSON.stringify(postList));
+    location.reload();
   };
 
   var getPosts = function(){
@@ -40,8 +41,6 @@ app.controller('AboutCtrl', ['$scope', function($scope) {
 app.controller('BlogCtrl', ['$scope', 'postService', function($scope, postService) {
       var retrievedObject = localStorage.getItem('testObject');
       $scope.posts = JSON.parse(retrievedObject);
-      //console.log('retrievedObject : ', JSON.parse(retrievedObject) );
-
       // [{
       //   post: [{
       //     body: "Some text"
