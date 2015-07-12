@@ -10,7 +10,6 @@ h1, h2, h3{
 	font-weight: 700;
 	font-style: italic;
 	font-size: 18px;
-	color: white;
 	text-align: center;
 }
 
@@ -43,6 +42,9 @@ h1, h2, h3{
 	font-style: italic;
 	color: #6F729E  !important;
 	font-size: 40px !important;
+}
+img{
+	margin-bottom: 10px;
 }
 .navbar{
 	background-color: #fff;
@@ -151,6 +153,7 @@ textarea{
 }
 #aboutInclude{
 	display: none;
+	color: #4a4d71 !important;
 }
 @media(min-width: 768px){
 	.postBox{
