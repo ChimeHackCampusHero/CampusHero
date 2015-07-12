@@ -1,4 +1,5 @@
 <div ng-controller="FormCtrl">
+
 	<h1> What's Your Story? </h1>
 	<form ng-submit="submit()" novalidate id="postForm" class="simple-form">
 	    <textarea name="comment" ng-model="post.body" form="postForm">Enter text here...</textarea>
@@ -25,28 +26,4 @@
     <li><a href="#">Enfield</a></li>
   </ul>
 </div>
-<br>
 
-
-<!-- 
-		<div class="dropdown">
-		    <select name="buildingss">
-				<option value="merrell">Merrell</option>
-				<option value="dakin">Dakin</option>
-				<option value="prescott">Prescott</option>
-				<option value="greenwich">Greenwich</option>
-				<option value="enfield">Enfield</option> -->
-				<!-- Lets do an ng-repeat for building in buildings -->
-			<!-- </select>
-		</div> -->
-<!-- 
-		<input type="checkbox" name="tYKS" value="tYKS">#thankYouKindStranger
-		<br>
-		<input type="checkbox" name="nOMW" value="nOMW">#notOnMyWatch
-		<br>
-		<input type="checkbox" name="uCD" value="uCD">#unCoolDude
-		<br> -->
-	    <input id="submitButton" type="submit"  value="POST" />
-	</form>
-
-</div>
