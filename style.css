@@ -19,7 +19,9 @@ h1, h2, h3{
 	font-style: normal;
 	margin-top: 7px;
 }
-
+select{
+	color: black;
+}
 .box{
 	border-radius: 3px;
 	font-family: 'Asap', sans-serif;
@@ -53,6 +55,10 @@ h1, h2, h3{
 img{
 	margin-bottom: 10px;
 }
+a img{
+	width: 280px;
+}
+
 .navbar{
 	background-color: #fff;
 	border: none;
