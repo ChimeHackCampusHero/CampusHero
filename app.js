@@ -8,7 +8,11 @@ app.service('postService', function(){
   var addPost = function(newPost){
     var retrievedObject = localStorage.getItem('testObject');
     var postList = JSON.parse(retrievedObject);
-    postList.push(newPost);
+    if (postList != undefined) {
+      postList.push(newPost);
+    } else {
+      postList = [newPost];
+    }
     localStorage.setItem('testObject', JSON.stringify(postList));
     location.reload();
   };
@@ -60,6 +64,7 @@ app.controller('BlogCtrl', ['$scope', 'postService', function($scope, postServic
 
 app.controller('FormCtrl', ['$scope', 'postService', function($scope, postService) {
       $scope.submit = function(post){
+          console.log("Post: ", post);
           date = new Date();
           correctDate = date.toString('dddd, MMMM ,yyyy'); 
           post.date = correctDate;
