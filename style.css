@@ -47,13 +47,20 @@ h1, h2, h3{
 .navbar{
 	background-color: #fff;
 	border: none;
-	color: #6F729E
+	color: blue;
+}
+.nav li a{
+	color: #6f729e !important;
+	size: 23px;
+font-family: 'Asap';
+font-weight: 700;
 }
 
 .navbar-toggle{
 	border: none;
 	color: white !important;
 }
+
 
 a{
 	color: #4e9dce;
