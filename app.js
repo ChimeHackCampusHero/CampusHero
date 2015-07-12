@@ -94,4 +94,8 @@ app.controller('FormCtrl', ['$scope', 'postService', function($scope, postServic
           post.date = correctDate;
           postService.addPost(post);
       };
+
+       $scope.addTag = function(tag) {
+          console.log("You added a tag! ", tag);
+        };
 }]);
