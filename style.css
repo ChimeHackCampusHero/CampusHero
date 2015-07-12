@@ -10,7 +10,7 @@ h1, h2, h3{
 	font-weight: 700;
 	font-style: italic;
 	font-size: 18px;
-	text-align: center;
+	/*text-align: center;*/
 }
 
 
@@ -29,11 +29,18 @@ h1, h2, h3{
 	margin: 10px -10px 5px -10px;
 	padding: 5px 10px 5px 10px;
 }
+#recentUpdates{
+	text-align: left;
+	color:#606288;
+	font-size: 26px;
+}
 
 #trigger-box {
 	background: #C1C3D8;
 	border-radius: 10px;
-	padding: 1px 20px 1px 20px;
+	padding: 10px 20px 1px 20px;
+	color: #373655;
+	font-size: 14px;
 }
 
 .navbar-brand{

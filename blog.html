@@ -1,7 +1,8 @@
 <div id="blog" ng-controller="BlogCtrl as blogCtrl">
+	<h1 id="recentUpdates">Recent Updates</h1>
 	<img src="colorful-tags.png" width="100%">
-	<div id="trigger-box"><h3>Warning: </h3>
-	<p> Material posted here by your peers may be triggering on topics such as sexual assault and violence. </p>
+	<div id="trigger-box">
+	<p> Warning: Material posted here by your peers may be triggering on topics such as sexual assault and violence. </p>
 	</div>
 	<div class="postBox" ng-repeat="post in posts | orderBy: '-date' | filter: customFilter ">
 		<div class="timeAndLocation">
