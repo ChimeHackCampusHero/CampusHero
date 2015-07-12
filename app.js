@@ -149,13 +149,12 @@ app.controller('StatsCtrl', ['$scope', function($scope){
 
 }]);
 app.controller("BarCtrl", function ($scope) {
-  $scope.labels = ['4/1', '4/2', '4/3', '4/4', '4/5', '4/6', '4/7','4/8', '4/9', '4/10', '4/11', '4/12', '4/13', '4/14','4/15', '4/16', '4/17', '4/18', '4/19', '4/20', '4/21','4/22', '4/23', '4/24', '4/25', '4/26', '4/27', '4/28', '4/29', '4/30'];
-  $scope.series = ['#thankYouKindStranger', '#unCoolDude'];
-
+  $scope.legend = true;
+  $scope.labels = ['September', 'October', 'November', 'December'];
+  $scope.series = ['#ThankYouKindStranger', '#UnCoolDude'];
   $scope.data = [
-    [20, 15, 30, 81, 56, 55, 40, 65, 59, 80, 81, 56, 55, 40, 65, 59, 80, 81, 56, 55, 40, 65, 59, 80, 81, 56, 55, 40, 12, 30],
-    [13, 12, 25, 32, 15, 55, 40, 7, 12, 2, 9, 33, 55, 40, 12, 3, 12, 21, 29, 30, 40, 3, 8, 20, 13, 20, 30, 40, 12, 15]
-  ];
+    [20, 15, 30, 40],
+    [13, 12, 25, 32] ];
 });
 
 app.controller("DoughnutCtrl", function ($scope) {
