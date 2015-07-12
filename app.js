@@ -92,7 +92,7 @@ app.controller('FormCtrl', ['$scope', 'postService', function($scope, postServic
       $scope.submit = function(post){
           console.log("Post: ", post);
           date = new Date();
-          correctDate = date.toString('dddd, MMMM ,yyyy'); 
+          correctDate = new Date();
           post.date = correctDate;
           post.tags = tags;
           postService.addPost(post);
