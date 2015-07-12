@@ -10,7 +10,6 @@ h1, h2, h3{
 	font-weight: 700;
 	font-style: italic;
 	font-size: 18px;
-	color: white;
 	text-align: center;
 }
 
@@ -44,16 +43,26 @@ h1, h2, h3{
 	color: #6F729E  !important;
 	font-size: 40px !important;
 }
+img{
+	margin-bottom: 10px;
+}
 .navbar{
 	background-color: #fff;
 	border: none;
-	color: #6F729E
+	color: blue;
+}
+.nav li a{
+	color: #6f729e !important;
+	size: 23px;
+font-family: 'Asap';
+font-weight: 700;
 }
 
 .navbar-toggle{
 	border: none;
 	color: white !important;
 }
+
 
 a{
 	color: #4e9dce;
@@ -144,6 +153,7 @@ textarea{
 }
 #aboutInclude{
 	display: none;
+	color: #4a4d71 !important;
 }
 @media(min-width: 768px){
 	.postBox{
