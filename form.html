@@ -20,8 +20,18 @@
         <br>
       <!-- TRIED TO GET LOCATION WORKING 
         <select ng-model="post.location" ng-options="location for locations in ['Merill','Dakin','Prescott','Enfield']"class="form-control btn btn-default dropdown-toggle" id="dropdownMenu1" aria-haspopup="true" aria-expanded="true"> </select> -->
+
+            <div>
+                Location:
+                <select data-ng-model="post.location"
+                        data-ng-options="location for location in locations">
+                </select>
+            </div>
+
+        <!--
         <div class="dropdown">
-			<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+
+            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
 				Location
 				<span class="caret"></span>
 			</button>
@@ -32,6 +42,7 @@
 			    <li><a href="#">Enfield</a></li>
 			</ul>
 		</div>
+		-->
 		<br>
 
         <input id="submitButton" type="submit"  value="post" />

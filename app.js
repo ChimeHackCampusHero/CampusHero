@@ -91,6 +91,8 @@ app.controller('BlogCtrl', ['$scope', 'postService', function($scope, postServic
 app.controller('FormCtrl', ['$scope', 'postService', function($scope, postService) {
       var tags = [];
 
+      $scope.locations = ["Merill", "Dakin", "Prescott", "Enfield"];
+
       $scope.submit = function(post){
           console.log("Post: ", post);
           date = new Date();
