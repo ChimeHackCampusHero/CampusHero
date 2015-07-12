@@ -4,26 +4,27 @@
 	<form ng-submit="submit()" novalidate id="postForm" class="simple-form">
 	    <textarea name="comment" ng-model="post.body" form="postForm">Enter text here...</textarea>
 	    <br />
-	    <div id="featTags">Featured Tags </div>
-	    
-		
+	    <div id="featTags">Featured Tags: </div>
+
 		<div id="allTags">
-			#ThankYouKindStranger  #Concent #YesMeansYes #OnlyWhenIWantIt #NotOnMyWatch #SexualAssault #UnCoolDude #Creepy #PartyCulture 
+			#ThankYouKindStranger  #Consent #YesMeansYes #OnlyWhenIWantIt #NotOnMyWatch #SexualAssault #UnCoolDude #Creepy #PartyCulture 
 		</div>
         <br>
+        <div class="dropdown">
+			<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+				Location
+				<span class="caret"></span>
+			</button>
+			<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+			    <li><a href="#">Merill</a></li>
+			    <li><a href="#">Dakin</a></li>
+			    <li><a href="#">Prescott</a></li>
+			    <li><a href="#">Enfield</a></li>
+			</ul>
+		</div>
+		<br>
         <input id="submitButton" type="submit"  value="Post" />
     </form>
 
-<div class="dropdown">
-  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-    Location
-    <span class="caret"></span>
-  </button>
-  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-    <li><a href="#">Merill</a></li>
-    <li><a href="#">Dakin</a></li>
-    <li><a href="#">Prescott</a></li>
-    <li><a href="#">Enfield</a></li>
-  </ul>
-</div>
+
 

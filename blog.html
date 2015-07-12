@@ -1,11 +1,12 @@
+<div id="blog" ng-controller="BlogCtrl as blogCtrl">
+
 	<h3> Trigger warning: </h3>
 	<p> Material posted here by your peers may be triggering on topics such as sexual assault and violence. </p>
-
-
-<div ng-controller="BlogCtrl as blogCtrl">
-	<div ng-repeat="post in posts | orderBy: '-date' ">
-		<p>{{post.body}}</p>
-		<p>{{post.date}}</p>
+	<div class="postBox" ng-repeat="post in posts | orderBy: '-date' ">
+		<div class="postBody">
+			<p>{{post.body}}</p>
+			<p>{{post.date}}</p>
+		</div>
 		<!--<p>Location: {{post.location}}</p>-->
 	</div>
 
