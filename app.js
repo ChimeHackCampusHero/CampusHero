@@ -76,6 +76,7 @@ app.controller('MainCtrl', ['$scope', "$location", function($scope, $location) {
 		//$scope.page = "map";
 		$scope.showMain = false;
         $scope.showMap = true;
+
         $scope.showStats = false;
 	};
     // $location.path( "/about" );
@@ -221,7 +222,7 @@ var addMarker = function(location){
 google.init = function initialize() {
 
   map = new google.maps.Map(document.getElementById('map-canvas'),
-          mapOptions);
+          mapOptions);  
 
 
 };

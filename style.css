@@ -3,14 +3,22 @@
 	margin-bottom: 50px;
 }
 body{
-	background-color: #4a4e6d;
+	background-color: #e1e1ed;
 }
 
 h1, h2, h3{
-	font-size: 20px;
+	font-weight: 700;
+	font-style: italic;
+	font-size: 18px;
 	color: white;
 	text-align: center;
 }
+#topPostBox{
+	font-size: 19px;
+	font-style: normal;
+	margin-top: 7px;
+}
+
 .box{
 	border-radius: 3px;
 	font-family: 'Asap', sans-serif;
@@ -21,7 +29,9 @@ h1, h2, h3{
 	padding: 5px 10px 5px 10px;
 }
 .navbar-brand{
-	font-family: 'Reenie Beanie', cursive;
+	font-family: 'Asap', cursive;
+	font-weight: 700;
+	font-style: italic;
 	color: white !important;
 	font-size: 40px !important;
 }
@@ -78,7 +88,8 @@ textarea{
 }
 
 #blog{
-	background-color: #4a4e6d;
+	background-color: #e1e1ed;
+
 }
 .postBox{
 	margin-right: -15px;
