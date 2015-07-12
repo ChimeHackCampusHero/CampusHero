@@ -1,25 +1,52 @@
 <div ng-controller="FormCtrl">
-	<h1> Tell the World </h1>
+	<h1> What's Your Story? </h1>
 	<form ng-submit="submit()" novalidate id="postForm" class="simple-form">
 	    <textarea name="comment" ng-model="post.body" form="postForm">Enter text here...</textarea>
 	    <br />
-	    Location:
-	    <select name="buildingss">
-			<option value="merrell">Merrell</option>
-			<option value="dakin">Dakin</option>
-			<option value="prescott">Prescott</option>
-			<option value="greenwich">Greenwich</option>
-			<option value="enfield">Enfield</option>
-			<!-- Lets do an ng-repeat for building in buildings -->
-		</select>
+	    <div id="featTags">Featured Tags </div>
+	    
+		
+		<div id="allTags">
+			#ThankYouKindStranger  #Concent #YesMeansYes #OnlyWhenIWantIt #NotOnMyWatch #SexualAssault #UnCoolDude #Creepy #PartyCulture 
+		</div>
 		<br>
+		Location:
+
+
+<div class="dropdown">
+  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+    Location
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+    <li><a href="#">Merill</a></li>
+    <li><a href="#">Dakin</a></li>
+    <li><a href="#">Prescott</a></li>
+    <li><a href="#">Enfield</a></li>
+  </ul>
+</div>
+<br>
+
+
+<!-- 
+		<div class="dropdown">
+		    <select name="buildingss">
+				<option value="merrell">Merrell</option>
+				<option value="dakin">Dakin</option>
+				<option value="prescott">Prescott</option>
+				<option value="greenwich">Greenwich</option>
+				<option value="enfield">Enfield</option> -->
+				<!-- Lets do an ng-repeat for building in buildings -->
+			<!-- </select>
+		</div> -->
+<!-- 
 		<input type="checkbox" name="tYKS" value="tYKS">#thankYouKindStranger
 		<br>
 		<input type="checkbox" name="nOMW" value="nOMW">#notOnMyWatch
 		<br>
 		<input type="checkbox" name="uCD" value="uCD">#unCoolDude
-		<br>
-	    <input id="submitButton" type="submit"  value="Post" />
+		<br> -->
+	    <input id="submitButton" type="submit"  value="POST" />
 	</form>
 
 </div>

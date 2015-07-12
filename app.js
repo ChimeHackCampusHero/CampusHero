@@ -13,7 +13,7 @@ app.service('postService', function(){
   };
 
   var getPosts = function(){
-    return postList;  
+    return postList;
   };
 
   return{
@@ -24,11 +24,22 @@ app.service('postService', function(){
 });
 
 app.controller('MainCtrl', ['$scope', "$location", function($scope, $location) {
-
+	console.log("FOO");
+	$scope.page = 'blog';
+	$scope.goStats = function(){
+		$scope.page = "stats";
+	};
+	$scope.goBlog = function(){
+		$scope.page = "blog";
+	};
     // $location.path( "/about" );
     $scope.about = "about.html";
     $scope.blog = "blog.html";
-    $scope.submitForm = "form.html"
+    $scope.submitForm = "form.html";
+    $scope.stats = "stats.html";
+
+    // $scope.mobile = false;
+
 
 }]);
 app.controller('AboutCtrl', ['$scope', function($scope) {
@@ -37,6 +48,8 @@ app.controller('AboutCtrl', ['$scope', function($scope) {
 
 app.controller('BlogCtrl', ['$scope', 'postService', function($scope, postService) {
       $scope.posts = postService.getPosts();
+      
+
       // [{
       //   post: [{
       //     body: "Some text"
@@ -56,10 +69,9 @@ app.controller('FormCtrl', ['$scope', function($scope, postService) {
       //};
 
       $scope.submit = function(posts){
-        
+
           $scope.posts.push(this.post);
-        //  $scope.postText = ""; 
-        
+        //  $scope.postText = "";
       };
 
       //$scope.reset = function() {
