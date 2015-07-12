@@ -214,7 +214,7 @@ var getLocation = function(location, body){ //, body, addMarker
 
 
 var addMarker = function(location, body){ // body
-  marker = new google.maps.Marker({
+  var marker = new google.maps.Marker({
     map:map,
     draggable:false,
     animation: google.maps.Animation.DROP,
