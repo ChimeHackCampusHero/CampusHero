@@ -6,7 +6,8 @@ app.service('postService', function(){
 
 
   var addPost = function(newPost){
-    var postList = [ {'body': 'sdsa', 'date' : '2014-04-25'}, {'body': 'sdsa2', 'date' : '2014-01-25'}  ];
+    var retrievedObject = localStorage.getItem('testObject');
+    var postList = JSON.parse(retrievedObject);
     postList.push(newPost);
     localStorage.setItem('testObject', JSON.stringify(postList));
   };
