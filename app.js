@@ -1,5 +1,8 @@
 var app = angular.module('myApp', ['ngRoute']);
 
+
+
+
 app.service('postService', function(){
 
 
@@ -35,6 +38,7 @@ app.service('postService', function(){
     if (postList == undefined) {
       postList = initData();
     }
+
     postList.push(newPost);
     localStorage.setItem('testObject', JSON.stringify(postList));
     location.reload();
@@ -77,6 +81,10 @@ app.controller('BlogCtrl', ['$scope', 'postService', function($scope, postServic
 
       var retrievedObject = localStorage.getItem('testObject');
       $scope.posts = JSON.parse(retrievedObject);
+      for (post in $scope.posts){
+        console.log(JSON.stringify($scope.posts));
+        getLocation(post.location);
+      }
       // [{
       //   post: [{
       //     body: "Some text"
@@ -103,3 +111,72 @@ app.controller('FormCtrl', ['$scope', 'postService', function($scope, postServic
           tags.push(tag);
         };
 }]);
+
+//MAPPING STUFF
+
+var college = new google.maps.LatLng(42.324365,-72.5321567);
+var prescott = new google.maps.LatLng(42.3235537,-72.5342356);
+var merill = new google.maps.LatLng(42.3235539,-72.5342356);
+var dakin = new google.maps.LatLng(42.3235535,-72.5342356);
+var enfield = new google.maps.LatLng(42.3235537,-72.5342359);
+var marker;
+var map;
+var google;
+var mapOptions = {
+    zoom: 16,
+    center: college
+};
+var getLocation = function(loc){
+  var prescott = new google.maps.LatLng(42.3235537,-72.5342356);
+  var merill = new google.maps.LatLng(42.3235539,-72.5342356);
+  var dakin = new google.maps.LatLng(42.3235535,-72.5342356);
+  var enfield = new google.maps.LatLng(42.3235537,-72.5342359);
+  console.log(loc);
+    if(loc == "Merril"){
+      addMarker(merill);
+    }else if(loc == "Prescott"){
+      addMarker(prescott);
+    } else if(loc == "Dakin"){
+      addMarker(dakin);
+    } else if(loc == "Enfield"){
+      addMarker(enfield);
+    }
+};
+var addMarker = function(location){
+  marker = new google.maps.Marker({
+    map:map,
+    draggable:false,
+    animation: google.maps.Animation.DROP,
+    position: location
+  });
+};
+google.init = function initialize() {
+
+  map = new google.maps.Map(document.getElementById('map-canvas'),
+          mapOptions);
+
+
+};
+
+google.bounce = function toggleBounce() {
+
+  if (marker.getAnimation() != null) {
+    marker.setAnimation(null);
+  } else {
+    marker.setAnimation(google.maps.Animation.BOUNCE);
+  }
+};
+//load the maps
+google.maps.event.addDomListener(window, 'load', google.init);
+
+
+
+
+
+// The following example creates a marker in Stockholm, Sweden
+// using a DROP animation. Clicking on the marker will toggle
+// the animation between a BOUNCE animation and no animation.
+
+
+
+
