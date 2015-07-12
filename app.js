@@ -130,7 +130,7 @@ app.controller('BlogCtrl', ['$scope', 'postService', function($scope, postServic
     $scope.posts = JSON.parse(retrievedObject);
     for(var obj in $scope.posts){
       if($scope.posts[obj].location != undefined){
-        getLocation($scope.posts[obj].location); //, $scope.posts[obj].body, addMarker  
+        getLocation($scope.posts[obj].location, $scope.posts[obj].body); //, $scope.posts[obj].body, addMarker  
       }
     };
 }]);
@@ -195,28 +195,46 @@ var mapOptions = {
     zoom: 16,
     center: college
 };
-var getLocation = function(location){ //, body, addMarker
+var getLocation = function(location, body){ //, body, addMarker
   var prescott = new google.maps.LatLng(42.323456, -72.533763);
   var merill = new google.maps.LatLng(42.323488, -72.529933);
   var dakin = new google.maps.LatLng(42.322782, -72.530330);
   var enfield = new google.maps.LatLng(42.325520, -72.531873);
    //console.log(loc);
     if(location == "Merril"){
-      addMarker(merill);
+      addMarker(merill, body);
     }else if(location == "Prescott"){
-      addMarker(prescott);
+      addMarker(prescott, body);
     } else if(location == "Dakin"){
-      addMarker(dakin);
+      addMarker(dakin, body);
     } else if(location == "Enfield"){
-      addMarker(enfield);
+      addMarker(enfield, body);
     }
 };
-var addMarker = function(location){ // body
+
+
+var addMarker = function(location, body){ // body
   marker = new google.maps.Marker({
     map:map,
     draggable:false,
     animation: google.maps.Animation.DROP,
     position: location,
+  });
+  console.log(body);
+  var contentString = '<div id="content">'+
+      '<div id="siteNotice">'+
+      '</div>'+
+      '<h1 id="firstHeading" class="firstHeading"></h1>'+
+      '<div id="bodyContent">'+
+      '<p>'+ body+'</p>'+
+      '<p>'+'</p>'+
+      '</div>'+
+      '</div>'; 
+  var infoWindow = new google.maps.InfoWindow({
+    content: contentString
+  });
+  google.maps.event.addListener(marker, 'click', function() {
+    infoWindow.open(map,marker);
   });
     marker.setMap(map);
     // addInfo(marker);
