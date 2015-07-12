@@ -5,8 +5,9 @@
 	<div class="postBox" ng-repeat="post in posts | orderBy: '-date' ">
 		<div class="timeAndLocation">
 
-			<span class="icon-location"></span>
+			<span class="icon-location"></span>{{post.location}}
  			<span class="time"><span class="icon-time"></span> <span>{{post.date | date:'EEEE, h:mm a'}}</span></span>
+            <span ng-repeat="tag in post.tags">{{tag }}</span>
 
 		</div>
 		<div class="postBody">

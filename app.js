@@ -5,27 +5,26 @@ var app = angular.module('myApp', ['ngRoute']);
 
 app.service('postService', function(){
 
-
   var initData = function() {
     var comments = [
            {
                 "id": 1,
-                "body": " This is comment 1.",
+                "body": "I was at a party on Saturday night. Some dude couldn't keep his hands to himself.",
                 "date": 1436672771000,
-                "location": "Merril",
+                "location": "Merill",
                 "tags": [
-                    "#uncooldude",
-                    "#notonmywatch"
+                    "#UnCoolDude",
+                    "#Creepy"
                 ]
             },
             {
-                "id": 1,
-                "body": " This is comment 2.",
+                "id": 2,
+                "body": "Saw a guy leaving a party with a drunk freshman. I made sure she got home ok.",
                 "date": 1436672521382,
-                "location": "Merril",
+                "location": "Dakin",
                 "tags": [
-                    "#uncooldude",
-                    "#notonmywatch"
+                    "#UnCoolDude",
+                    "#NotOnMyWatch"
                 ]
             }
       ];
@@ -85,11 +84,6 @@ app.controller('BlogCtrl', ['$scope', 'postService', function($scope, postServic
         console.log(JSON.stringify($scope.posts));
         getLocation(post.location);
       }
-      // [{
-      //   post: [{
-      //     body: "Some text"
-      //   }]
-      // }];
 }]);
 
 
