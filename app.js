@@ -87,7 +87,7 @@ app.controller('BlogCtrl', ['$scope', 'postService', function($scope, postServic
   $scope.selectedLocation = "All";
 
     // Custom filter for sorting by location
-    $scope.customFilter = function(post) {
+    $scope.customFilter = function(post, getLocation) {
       if (post.location === $scope.selectedLocation) {
         return true;
       } else if ($scope.selectedLocation === "All") {
@@ -99,9 +99,12 @@ app.controller('BlogCtrl', ['$scope', 'postService', function($scope, postServic
 
     var retrievedObject = localStorage.getItem('testObject');
     $scope.posts = JSON.parse(retrievedObject);
-    for (post in $scope.posts){
-      getLocation(post.location);
-    }
+    for(var obj in $scope.posts){
+      if($scope.posts[obj].location != undefined){
+        getLocation($scope.posts[obj].location);  
+      }
+      
+    };
 }]);
 
 app.controller('StatsCtrl', ['$scope', function($scope){
