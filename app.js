@@ -1,7 +1,4 @@
-var app = angular.module('myApp', ['ngRoute']);
-
-
-
+var app = angular.module('myApp', ['chart.js']);
 
 app.service('postService', function(){
 
@@ -56,16 +53,30 @@ app.service('postService', function(){
 });
 
 app.controller('MainCtrl', ['$scope', "$location", function($scope, $location) {
+    $scope.showMain = true;
+    $scope.showMap = false;
+    $scope.showStats = false;
+
     //localStorage.clear();
 	$scope.page = 'blog';
 	$scope.goStats = function(){
-		$scope.page = "stats";
+		//$scope.page = "stats";
+		$scope.showMain = false;
+        $scope.showMap = false;
+        $scope.showStats = true;
+
 	};
 	$scope.goBlog = function(){
-		$scope.page = "blog";
+		//$scope.page = "blog";
+		$scope.showMain = true;
+            $scope.showMap = false;
+            $scope.showStats = false;
 	};
 	$scope.goMap = function(){
-		$scope.page = "map";
+		//$scope.page = "map";
+		$scope.showMain = false;
+        $scope.showMap = true;
+        $scope.showStats = false;
 	};
     // $location.path( "/about" );
     $scope.about = "about.html";
@@ -81,7 +92,7 @@ app.controller('AboutCtrl', ['$scope', function($scope) {
 
 app.controller('BlogCtrl', ['$scope', 'postService', function($scope, postService) {
 
-  // Contains the filter options
+  // Contains the location options
   $scope.locationOptions =  ["All", "Dakin", "Enfield", "Merill", "Prescott"];
 
   $scope.selectedLocation = "All";
@@ -97,6 +108,23 @@ app.controller('BlogCtrl', ['$scope', 'postService', function($scope, postServic
       }
     };
 
+   /*
+      // Contains the tag options
+      $scope.locationOptions =
+      [ "All", "#ThankYouKindStranger", "#Consent", "#YesMeansYes", "#OnlyWhenIWantIt", "#NotOnMyWatch", "#SexualAssault", "#UnCoolDude", "#Creepy", "#PartyCulture" ];
+
+      $scope.selectedLocation = "All";
+
+        // Custom filter for sorting by location
+        $scope.customFilter = function(post) {
+          if (post.tags.indexOf($scope.selectedTag) != -1) {
+            return false;
+          } else {
+            return true;
+          }
+        };
+    */
+
     var retrievedObject = localStorage.getItem('testObject');
     $scope.posts = JSON.parse(retrievedObject);
     for(var obj in $scope.posts){
@@ -109,32 +137,26 @@ app.controller('BlogCtrl', ['$scope', 'postService', function($scope, postServic
 
 app.controller('StatsCtrl', ['$scope', function($scope){
 
-// 	var myBarChart = new Chart(ctx).Bar(data, options);
+	  // $scope.labels = ['2006', '2007', '2008', '2009', '2010', '2011', '2012'];
+	  // $scope.series = ['Series A', 'Series B'];
 
-// 	var data = {
-//     labels: ["January", "February", "March", "April", "May", "June", "July"],
-//     datasets: [
-//         {
-//             label: "My First dataset",
-//             fillColor: "rgba(220,220,220,0.5)",
-//             strokeColor: "rgba(220,220,220,0.8)",
-//             highlightFill: "rgba(220,220,220,0.75)",
-//             highlightStroke: "rgba(220,220,220,1)",
-//             data: [65, 59, 80, 81, 56, 55, 40]
-//         },
-//         {
-//             label: "My Second dataset",
-//             fillColor: "rgba(151,187,205,0.5)",
-//             strokeColor: "rgba(151,187,205,0.8)",
-//             highlightFill: "rgba(151,187,205,0.75)",
-//             highlightStroke: "rgba(151,187,205,1)",
-//             data: [28, 48, 40, 19, 86, 27, 90]
-//         }
-//     ]
-// };
+	  // $scope.data = [
+	  //   [65, 59, 80, 81, 56, 55, 40],
+	  //   [28, 48, 40, 19, 86, 27, 90]
+	  // ];
+
 
 
 }]);
+app.controller("BarCtrl", function ($scope) {
+  $scope.labels = ['2006', '2007', '2008', '2009', '2010', '2011', '2012'];
+  $scope.series = ['Series A', 'Series B'];
+
+  $scope.data = [
+    [65, 59, 80, 81, 56, 55, 40],
+    [28, 48, 40, 19, 86, 27, 90]
+  ];
+});
 
 app.controller('FormCtrl', ['$scope', 'postService', function($scope, postService) {
       var tags = [];
