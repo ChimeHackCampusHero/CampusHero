@@ -3,9 +3,13 @@
 	<h3> Trigger warning: </h3>
 	<p> Material posted here by your peers may be triggering on topics such as sexual assault and violence. </p>
 	<div class="postBox" ng-repeat="post in posts | orderBy: '-date' ">
+		<div class="timeAndLocation">
+			<span class="icon-location"></span>
+
+			<span class="time">{{post.date}} <span class="icon-time"></span></span>
+		</div>
 		<div class="postBody">
 			<p>{{post.body}}</p>
-			<p>{{post.date}}</p>
 		</div>
 		<!--<p>Location: {{post.location}}</p>-->
 	</div>
