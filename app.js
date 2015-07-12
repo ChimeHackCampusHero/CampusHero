@@ -130,7 +130,7 @@ app.controller('BlogCtrl', ['$scope', 'postService', function($scope, postServic
     $scope.posts = JSON.parse(retrievedObject);
     for(var obj in $scope.posts){
       if($scope.posts[obj].location != undefined){
-        getLocation($scope.posts[obj].location);  
+        getLocation($scope.posts[obj].location); //, $scope.posts[obj].body, addMarker  
       }
     };
 }]);
@@ -196,29 +196,45 @@ var mapOptions = {
     zoom: 16,
     center: college
 };
-var getLocation = function(loc){
+var getLocation = function(location){ //, body, addMarker
   var prescott = new google.maps.LatLng(42.323456, -72.533763);
   var merill = new google.maps.LatLng(42.323488, -72.529933);
   var dakin = new google.maps.LatLng(42.322782, -72.530330);
   var enfield = new google.maps.LatLng(42.325520, -72.531873);
-   console.log(loc);
-    if(loc == "Merril"){
+   //console.log(loc);
+    if(location == "Merril"){
       addMarker(merill);
-    }else if(loc == "Prescott"){
+    }else if(location == "Prescott"){
       addMarker(prescott);
-    } else if(loc == "Dakin"){
+    } else if(location == "Dakin"){
       addMarker(dakin);
-    } else if(loc == "Enfield"){
+    } else if(location == "Enfield"){
       addMarker(enfield);
     }
 };
-var addMarker = function(location){
+var addMarker = function(location){ // body
   marker = new google.maps.Marker({
     map:map,
     draggable:false,
     animation: google.maps.Animation.DROP,
-    position: location
+    position: location,
   });
+  // var contentString = '<div id="content">'+
+  //     '<div id="siteNotice">'+
+  //     '</div>'+
+  //     '<h1 id="firstHeading" class="firstHeading"></h1>'+
+  //     '<div id="bodyContent">'+
+  //     '<p>'+"ASD"+'</p>'+
+  //     '<p>'+'</p>'+
+  //     '</div>'+
+  //     '</div>';
+  // var infoWindow = new google.maps.infoWindow({
+  //   content: contentString
+  // });
+  // marker.setMap(map);
+  // google.maps.event.addListener(marker, 'click', function() {
+  //   infowindow.open(map,marker);
+  // });
 };
 google.init = function initialize() {
 
