@@ -19,7 +19,9 @@ h1, h2, h3{
 	font-style: normal;
 	margin-top: 7px;
 }
-
+select{
+	color: black;
+}
 .box{
 	border-radius: 3px;
 	font-family: 'Asap', sans-serif;
@@ -53,6 +55,10 @@ h1, h2, h3{
 img{
 	margin-bottom: 10px;
 }
+a img{
+	width: 280px;
+}
+
 .navbar{
 	background-color: #fff;
 	border: none;
@@ -120,10 +126,13 @@ textarea{
 .postBox{
 	margin-right: -15px;
 	margin-left: -15px;
-	padding: 15px 15px 30px 15px;
-	border-top: 3px solid #6b6f91;
-}
+	padding: 10px 15px 10px 15px;
 
+}
+#locationWord{
+	color:#6f729e;
+	padding-bottom: 200px;
+}
 .postBody{
 	background-color: #fff;
 	border-radius: 8px;

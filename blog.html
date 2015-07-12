@@ -5,21 +5,22 @@
 	<p> Warning: Material posted here by your peers may be triggering on topics such as sexual assault and violence. </p>
 	</div>
 	<div class="postBox" ng-repeat="post in posts | orderBy: '-date' | filter: customFilter ">
-		<div class="timeAndLocation">
-
-			<span class="icon-location"></span>{{post.location}}
- 			<span class="time"><span class="icon-time"></span> <span>{{post.date | date:'EEEE, h:mm a'}}</span></span>
-
-		</div>
+		
 		<div class="postBody">
 			<p>{{post.body}}</p>
             <span ng-repeat-start="tag in post.tags" ng-bind="tag"></span> <span ng-repeat-end></span>
+            <div class="timeAndLocation">
+
+				<span class="icon-location"></span>{{post.location}}
+	 			<span class="time"><span class="icon-time"></span> <span>{{post.date | date:'EEEE, h:mm a'}}</span></span>
+
+			</div>
         </div>
 
 		<!--<p>Location: {{post.location}}</p>-->
 	</div>
 
-    Location:
+    <span id="locationWord">Location:</span>
     <select ng-model="selectedLocation" ng-options="location for location in locationOptions">
     </select>
 
