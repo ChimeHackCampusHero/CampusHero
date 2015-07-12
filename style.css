@@ -112,6 +112,9 @@ textarea{
 	margin-right: -15px;
 	border-radius: 0px;
 }
+#aboutInclude{
+	display: none;
+}
 @media(min-width: 768px){
 	.postBox{
 		border: none;
@@ -121,5 +124,8 @@ textarea{
 	}
 	#form{
 		border-radius: 8px;
+	}
+	#aboutInclude{
+		display: block;
 	}
 }

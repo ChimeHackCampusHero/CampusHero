@@ -92,7 +92,7 @@ app.controller('FormCtrl', ['$scope', 'postService', function($scope, postServic
       $scope.submit = function(post){
           console.log("Post: ", post);
           date = new Date();
-          correctDate = date.toString('dddd, MMMM ,yyyy'); 
+          correctDate = date.toString('dddd, MMMM ,yyyy');
           post.date = correctDate;
           post.tags = tags;
           postService.addPost(post);
@@ -101,5 +101,7 @@ app.controller('FormCtrl', ['$scope', 'postService', function($scope, postServic
        $scope.addTag = function(tag) {
           console.log("You added a tag! ", tag);
           tags.push(tag);
+
+			document.postForm.comment.value += tag;
         };
 }]);
