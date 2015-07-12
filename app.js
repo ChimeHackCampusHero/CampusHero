@@ -16,7 +16,7 @@ app.service('postService', function(){
             },
             {
                 "id": 2,
-                "body": "Saw a guy leaving a party with a drunk freshman. I made sure she got home ok.",
+                "body": "Saw a guy trying to leave a party with a drunk freshman. My friends and I made sure she got home safely.",
                 "date": 1436672521382,
                 "location": "Dakin",
                 "tags": [
